@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  h1 {
+    @apply font-bricolage font-normal  text-5xl tracking-normal sm:text-7xl;
+  }
+
+  h2 {
+    @apply font-bricolage font-medium text-2xl lg:text-5xl tracking-normal;
+  }
+
+  h3 {
+    @apply font-bricolage font-medium lg:text-3xl tracking-normal;
+  }
+
+  subtitle {
+    @apply font-bricolage font-medium text-xl tracking-normal;
+  }
+
+  p {
+    @apply font-bricolage font-normal text-lg tracking-wide;
+  }
+
+  body {
+    @apply font-bricolage font-normal text-base tracking-wide;
+  }
+
+  small,
+  caption {
+    @apply font-bricolage font-normal text-sm tracking-normal;
+  }
+
+  li {
+    @apply font-bricolage font-normal text-base lg:text-xl tracking-wide;
+  }
+
+  bloquote {
+    @apply font-bricolage font-normal text-sm tracking-normal;
+  }
+}
