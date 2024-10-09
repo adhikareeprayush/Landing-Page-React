@@ -1,0 +1,26 @@
+.hover-lila:hover {
+  color: #b4a6fc !important;
+}
+
+.hover-black:hover {
+  color: black !important;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.dropdownMenu {
+  border: 3px solid black !important;
+  display: flex;
+  flex-direction: column !important;
+  align-items: start !important;
+}
+
+.dropdownMenu button:last-child {
+  width: 100%;
+  border-top: 2px solid black;
+  text-align: left;
+}

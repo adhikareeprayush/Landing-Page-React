@@ -6,6 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    shadows: {
+      colored: {
+        '--tw-shadow-colored': '0 5px var(--tw-shadow-color)',
+      },
+    },
     colors: {
       success: {
         50: "#f3faf8",
@@ -45,7 +50,7 @@ export default {
         900: "#74261a",
         950: "#3e110c"
       },
-      Worning: {
+      danger: {
         50: "#fdf5f3",
         100: "#fce8e4",
         200: "#fad5ce",
