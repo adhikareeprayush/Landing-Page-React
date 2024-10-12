@@ -17,3 +17,7 @@
   align-items: center;
   flex-basis: 50%;
 }
+
+.hero button {
+  width: fit-content !important;
+}

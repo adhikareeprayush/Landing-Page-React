@@ -1,5 +1,6 @@
 import Navbar from "./Components/NavBar/Navbar"
 import Hero from "./Components/Hero/Hero"
+import InifiniteMarquee from "./Components/InfiniteMarquee/InifiniteMarquee"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <div className='App'>
       <Navbar />
       <Hero />
+      <InifiniteMarquee />
     </div>
 
   )
