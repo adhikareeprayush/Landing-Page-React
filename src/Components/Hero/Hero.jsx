@@ -1,3 +1,4 @@
+import { ICONS } from '../../assets/ICONS';
 import Button from '../Button/Button';
 import './Hero.css'
 
@@ -10,7 +11,7 @@ const Hero = () => {
                 <Button text="Explore all pages" type="secondary" />
             </div>
             <div className="hero-image bg-[#fee3c6]">
-                Hi
+                <img src={ICONS.blob1} alt="" className='w-[150px] h-[150px] rounded-[50%] border-4 border-[#141520]' />
             </div>
         </section>
     )
