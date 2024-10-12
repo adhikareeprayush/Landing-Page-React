@@ -2,9 +2,9 @@
 import PropTypes from 'prop-types';
 import { ICONS } from '../../assets/ICONS';
 
-const FeaturedCard = ({ backgroundColor, icon, title, description }) => {
+const FeaturedCard = ({ backgroundColor, icon, title, description, className }) => {
     return (
-        <div className={`${backgroundColor} flex flex-col featuredCard border-2 border-black shadow p-8 rounded-3xl gap-4`}
+        <div className={`${backgroundColor} flex flex-col featuredCard border-2 border-black shadow p-8 rounded-3xl gap-4 ${className}`}
             style={{ '--tw-shadow-color': '#000000' }}
         >
             <div className="featureIcon">
@@ -20,6 +20,7 @@ const FeaturedCard = ({ backgroundColor, icon, title, description }) => {
 FeaturedCard.propTypes = {
     backgroundColor: PropTypes.string,
     icon: PropTypes.string,
+    className: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string
 }

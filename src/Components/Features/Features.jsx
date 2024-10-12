@@ -45,7 +45,7 @@ const Features = () => {
 
     ];
     return (
-        <section className="py-[48px] px-[16px] grid grid-cols-3 items-center gap-x-2 gap-y-4">
+        <section className="py-[48px] px-[16px] grid grid-cols-3 items-center gap-x-2 gap-y-4 border-b-2">
             {featuredCards.map((card, index) => (
                 <FeaturedCard key={index} {...card} />
             ))}

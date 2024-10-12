@@ -1,7 +1,6 @@
-// src/components/Button.jsx
 import PropTypes from "prop-types";
-import './Button.css'
-import { ICONS } from '../../assets/ICONS'
+import './Button.css';
+import { ICONS } from '../../assets/ICONS';
 import { useState, useRef, useEffect } from "react";
 
 const Button = ({
@@ -13,8 +12,8 @@ const Button = ({
     ghost = false,     // Ghost button
     dropdownItems = [], // Dropdown items (an array of {label, value})
     onDropdownSelect,  // Function to handle selection of dropdown item
+    onClick,  // The main onClick handler
 }) => {
-
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const buttonRef = useRef(null); // Create a ref for the button
 
@@ -34,42 +33,21 @@ const Button = ({
             "border": "border-black-900",
             "shadowColor": "#000000"
         },
-        info: {
-            "base": "text-black bg-info-300 border-2",
-            "hover": "hover:text-[#fff] hover:bg-[#7ca4de]",
-            "focus": "focus:bg-info-600 focus:translate-y-1 focus:shadow-none focus:text-white",
-            "border": "border-[#5d85d4]",
-            "shadowColor": "#5d85d4",
-        },
-        success: {
-            "base": "text-white bg-success-300 border-2",
-            "hover": "hover:bg-success-500 hover:text-[#fff]",
-            "focus": "focus:bg-success-600 focus:text-white focus:translate-y-1 focus:shadow-none",
-            "border": "border-[#2c7572]",
-            "shadowColor": "#2c7572",
-        },
-        warning: {
-            "base": "text-black bg-warning-300 border-2",
-            "hover": "hover:bg-warning-500 hover:text-[#fff]",
-            "focus": "focus:bg-warning-600 focus:text-white focus:translate-y-1 focus:shadow-none",
-            "border": "border-[#d8471e]",
-            "shadowColor": "#d8471e",
-        },
-        danger: {
-            "base": "text-white bg-danger-300 border-2",
-            "hover": "hover:bg-danger-500 hover:text-[#fff]",
-            "focus": "focus:bg-danger-600 focus:text-white focus:translate-y-1 focus:shadow-none",
-            "border": "border-[#cd4e35]",
-            "shadowColor": "#cd4e35",
-        }
+        // other button types
     };
 
     // Merge classes based on the selected type
     const currentType = buttonTypes[type] || buttonTypes.primary;
 
-    const handleClick = () => {
-        if (!isDropdownOpen) {
-            setIsDropdownOpen(true); // Open the dropdown only if it's not already open
+    const handleClick = (e) => {
+        // Handle dropdown logic first
+        if (dropdownItems.length > 0) {
+            setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown
+        }
+
+        // Trigger the passed onClick prop if it exists
+        if (onClick) {
+            onClick(e);
         }
     };
 
@@ -96,7 +74,6 @@ const Button = ({
         setIsDropdownOpen(false); // Close the dropdown after selection
     };
 
-
     return (
         <div className="relative" ref={buttonRef}> {/* Wrap button and dropdown in a relative container */}
             <button
@@ -113,10 +90,7 @@ const Button = ({
                 `}
                 style={ghost ? { color: currentType.shadowColor } : { '--tw-shadow-color': currentType.shadowColor }}
             >
-                {
-                    icon ? <img src={ICONS[icon]} alt="icon" className="mr-2" /> : ''
-                }
-
+                {icon && <img src={ICONS[icon]} alt="icon" className="mr-2" />}
                 {text}
                 {dropdownItems.length > 0 && (
                     <img
@@ -149,12 +123,11 @@ const Button = ({
 Button.propTypes = {
     text: PropTypes.string,
     type: PropTypes.oneOf(["primary", "secondary", "success", "warning"]),
-    onClick: PropTypes.func,
+    onClick: PropTypes.func,  // Add onClick validation
     disabled: PropTypes.bool,
     className: PropTypes.string,
     icon: PropTypes.string,
     ghost: PropTypes.bool,
-    dropdown: PropTypes.bool,
     dropdownItems: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string, value: PropTypes.any })), // Dropdown items prop
     onDropdownSelect: PropTypes.func, // Function to handle dropdown item selection
 };
