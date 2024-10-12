@@ -8,7 +8,7 @@ const FeaturedCard = ({ backgroundColor, icon, title, description }) => {
             style={{ '--tw-shadow-color': '#000000' }}
         >
             <div className="featureIcon">
-                <img src={ICONS[icon]} alt={icon} className='h-[70px] w-[70px] rounded-[50%] object-contain border-2' />
+                <img src={ICONS[icon]} alt={icon} className='h-[70px] w-[70px] rounded-[50%] object-contain' />
             </div>
             <p className='font-medium'>{title}</p>
             <p>{description}</p>

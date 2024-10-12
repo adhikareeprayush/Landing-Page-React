@@ -5,7 +5,7 @@ import { ICONS } from '../../assets/ICONS'
 import { useState, useRef, useEffect } from "react";
 
 const Button = ({
-    text = "Button",   // Default button text
+    text = "",   // Default button text
     type = "primary",  // Default type
     disabled = false,  // Disabled state
     className = "",    // Custom class names
