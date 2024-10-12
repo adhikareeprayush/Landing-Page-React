@@ -1,3 +1,9 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #141520;
+}
+
 nav .rightBtn {
   padding: 0px 32px;
   color: white;
@@ -9,7 +15,7 @@ nav ul li {
 
 nav ul li.rightBtn {
   padding: 0px 32px;
-  background-color: black;
+  background-color: #141520;
   height: 100%;
   display: flex;
   align-items: center;
@@ -19,6 +25,14 @@ nav ul li.rightBtn {
 
 nav ul li.rightBtn:hover {
   background-color: white;
-  color: black;
-  border-left: 1px solid black;
+  color: #141520;
+  border-left: 1px solid #141520;
+}
+
+nav h1 {
+  width: 100%;
+  border-bottom: 2px solid #141520;
+  text-align: center;
+  font-size: 120px;
+  font-weight: 900;
 }

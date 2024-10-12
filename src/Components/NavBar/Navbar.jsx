@@ -3,6 +3,7 @@ import './Navbar.css'
 const Navbar = () => {
     return (
         <nav className="navbar bg-lila-500 flex justify-between">
+            <h1>Prayush Adhikari</h1>
             <ul className='relative flex gap-3 w-full h-full py-6'>
                 <li>Home</li>
                 <li>About</li>
@@ -10,7 +11,6 @@ const Navbar = () => {
                 <li>Contact</li>
                 <li className='rightBtn ml-auto absolute right-0 top-0'>Hire me</li>
             </ul>
-
         </nav>
     )
 }

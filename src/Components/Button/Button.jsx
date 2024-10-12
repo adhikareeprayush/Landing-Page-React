@@ -28,7 +28,7 @@ const Button = ({
             "shadowColor": "#b4a6fc"
         },
         secondary: {
-            "base": "text-black bg-white border-2",
+            "base": "text-black bg-[#fff] border-2",
             "hover": "hover:text-lila-800 hover:border-[#000]",
             "focus": "focus:border-black focus:translate-y-1 focus:shadow-none focus:bg-[#000] focus:text-[#fff]",
             "border": "border-black-900",
