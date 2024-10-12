@@ -1,19 +1,16 @@
 // src/components/Button.jsx
 import PropTypes from "prop-types";
 import './Button.css'
-import arrowDownBlack from '../../assets/icons/angle-down-black.svg'
-import arrowDownWhite from '../../assets/icons/angle-down-white.svg'
+import { ICONS } from '../../assets/ICONS'
 import { useState, useRef, useEffect } from "react";
 
 const Button = ({
     text = "Button",   // Default button text
     type = "primary",  // Default type
-    onClick,           // Click handler
     disabled = false,  // Disabled state
     className = "",    // Custom class names
     icon = null,       // Icon component
     ghost = false,     // Ghost button
-    // dropdown = false,  // Dropdown button
     dropdownItems = [], // Dropdown items (an array of {label, value})
     onDropdownSelect,  // Function to handle selection of dropdown item
 }) => {
@@ -116,11 +113,14 @@ const Button = ({
                 `}
                 style={ghost ? { color: currentType.shadowColor } : { '--tw-shadow-color': currentType.shadowColor }}
             >
-                {icon ? <i className={icon}></i> : ''}
+                {
+                    icon ? <img src={ICONS[icon]} alt="icon" className="mr-2" /> : ''
+                }
+
                 {text}
                 {dropdownItems.length > 0 && (
                     <img
-                        src={isDropdownOpen ? arrowDownWhite : arrowDownBlack}
+                        src={isDropdownOpen ? ICONS.angleDownWhite : ICONS.angleDownBlack}
                         alt="dropdown"
                         className={`ml-2 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}
                     />
@@ -129,7 +129,7 @@ const Button = ({
 
             {/* Dropdown Menu */}
             {isDropdownOpen && dropdownItems.length > 0 && (
-                <ul className="dropdownMenu absolute left-0 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                <ul className="dropdownMenu absolute left-0 mt-2 w-full bg-[#fff] border border-gray-200 rounded-lg shadow-lg z-10">
                     {dropdownItems.map((item) => (
                         <button
                             key={item.value}
