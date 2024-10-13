@@ -71,8 +71,8 @@ const RealTimeMarketData = () => {
 
 
     return (
-        <section className="flex w-full items-center">
-            <div className="real-content py-16 px-2 border-r-2 bg-yellow-500">
+        <section className="flex w-full items-center border-b-2">
+            <div className="real-content py-16 px-6 border-r-2 bg-yellow-500">
                 <h2>Real-time Market Data</h2>
                 <p>Rest easy knowing your crypto assets are protected by state-of-the-art security measures and encryption, ensuring the safety of your digital wealth.</p>
                 <div className="controls flex gap-2 items-center">

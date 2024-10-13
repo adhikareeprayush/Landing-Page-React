@@ -4,6 +4,7 @@ import InfiniteMarquee from "./Components/InfiniteMarquee/InifiniteMarquee";
 import YourWindow from "./Components/YourWindow/YourWindow";
 import Features from "./Components/Features/Features";
 import RealTimeMarketData from "./Components/RealTimeMarketData/RealTimeMarketData";
+import Unleash from "./Components/Unleash/Unleash";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <YourWindow />
       <Features />
       <RealTimeMarketData />
+      <Unleash />
     </div>
   );
 }
