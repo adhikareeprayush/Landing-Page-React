@@ -2,3 +2,17 @@
   flex-basis: 50%;
   gap: 24px;
 }
+
+.rightUleash {
+  flex-basis: 50%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rightUleash::-webkit-scrollbar {
+  display: none;
+}
+
+.rightUleash .card:nth-child(odd) {
+  border-right: 2px solid black;
+}
