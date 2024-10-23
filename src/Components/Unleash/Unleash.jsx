@@ -70,7 +70,7 @@ const unleashCardContents = [
 const Unleash = () => {
     return (
         <div className="Unleash flex justify-between">
-            <div className="lelftUnleash flex flex-col py-16 px-16 border-r-2 bg-green-500 min-w-[50%]">
+            <div className="lelftUnleash flex flex-col py-16 px-16 border-r-2 bg-green-500 min-w-[50%] h-[640px]">
                 <img src={ICONS.heartIcon} alt="heartIcon" className="w-[100px] h-[100px] object-contain" />
                 <h2>Unleash the potential
                     of digital assets</h2>

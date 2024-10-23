@@ -58,3 +58,15 @@
   height: 100%;
   margin: 0 auto;
 }
+
+.pause {
+  animation-play-state: paused;
+}
+
+/* Add these styles for smooth animation */
+.animate-marquee,
+.animate-marquee2 {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
